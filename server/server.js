@@ -10,8 +10,8 @@ connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cors({credentials: true}))
+app.use(cors({credentials: true}));
 
-app.listen(PORT, () => console.log("Database successfully connected"))
+app.listen(PORT, () => console.log("Database successfully connected on port: " + PORT))
 
 
