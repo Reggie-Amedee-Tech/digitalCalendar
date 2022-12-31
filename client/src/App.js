@@ -1,13 +1,12 @@
 import {Routes, Route} from 'react-router-dom'
-import CalendarComponent from './components/CalendarComponent';
-import Calendar from './components/Calendar';
+import Homepage from './views/Homepage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="" element={<Calendar/>}/>
+        <Route path="" element={<Homepage/>}/>
 
       </Routes>
     </div>

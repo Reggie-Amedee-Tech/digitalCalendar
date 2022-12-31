@@ -7,22 +7,13 @@ import '../assets/Calendar.css'
 const Calendar = () => {
     const [startDate, setStartDate] = useState(new Date());
 
-    console.log(startDate);
-
     return (
-        <div className='Div'>
-
-        <div className='Container'>
-
-        
         <DatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             inline
-            
         />
-        </div>
-        </div>
+
     );
 }
 
