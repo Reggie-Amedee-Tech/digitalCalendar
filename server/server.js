@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors({credentials: true}));
 
+require("./routes/calendar.routes")(app)
 app.listen(PORT, () => console.log("Database successfully connected on port: " + PORT))
 
 
