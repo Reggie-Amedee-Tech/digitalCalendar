@@ -11,15 +11,10 @@ const CalendarEvent = new mongoose.Schema({
         required: true
     },
 
-    eventStartDate: {
+    eventDate: {
         type: Date,
-        
+        required: true
     },
-
-    // eventEndTime: {
-    //     type: Date,
-    //     required: true
-    // },
 
     completed: {
         type: Boolean,
