@@ -11,6 +11,16 @@ const CalendarEvent = new mongoose.Schema({
         required: true
     },
 
+    eventStartDate: {
+        type: Date,
+        
+    },
+
+    // eventEndTime: {
+    //     type: Date,
+    //     required: true
+    // },
+
     completed: {
         type: Boolean,
         default: false
