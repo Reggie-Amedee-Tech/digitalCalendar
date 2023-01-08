@@ -1,16 +1,20 @@
-import {Routes, Route} from 'react-router-dom'
-import Homepage from './views/Homepage';
-import './App.css';
+import { Route, Routes, Navigate } from "react-router-dom"
+import Main from "./components/Main"
+import Signup from "./components/SignUp"
+import Login from "./components/Login"
 
 function App() {
+  const user = localStorage.getItem("token")
   return (
     <div className="App">
       <Routes>
-        <Route path="" element={<Homepage/>}/>
-
+        {user && <Route path="/" exact element={<Main />} />}
+        <Route path="/signup" exact element={<Signup />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/" element={<Navigate replace to="/login" />} />
       </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
