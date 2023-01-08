@@ -1,19 +1,23 @@
-const express = require('express');
-const app = express();
-const cors = require('cors');
-require("dotenv").config();
+require("dotenv").config()
+const express = require("express")
+const app = express()
+const cors = require("cors")
+const userRoutes = require("./routes/userModels.routes")
+const authRoutes = require("./routes/auth.routes")
 
-const PORT = process.env.PORT || 4000;
+// Database Connection
+const connectDB = require("./config/db.config")
+connectDB()
 
-const connectDB = require('./config/db.config');
-connectDB();
+//Middlewares
+app.use(express.json())
+app.use(cors())
 
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
-app.use(cors({credentials: true}));
+//Routes
+app.use("/api/users", userRoutes)
+app.use("/api/auth", authRoutes)
 
-require("./routes/calendar.routes")(app)
-require("./routes/userModels.routes")(app)
-app.listen(PORT, () => console.log("Database successfully connected on port: " + PORT))
-
-
+const PORT = process.env.PORT || 4000
+app.listen(PORT, () =>
+  console.log("Database successfully connected on port: " + PORT)
+)
