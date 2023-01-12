@@ -1,18 +1,25 @@
 const CalendarEvents = require('../models/calendar.model')
+const jwt = require("jsonwebtoken")
 
 module.exports.createEvent = (request, response) => {
     const {eventName, eventDetails, eventDate} = request.body;
+    const decodedJwt = jwt.decode(request.cookies.RANDOM_TOKEN, {complete: true})
+    const userId = decodedJwt.payload.userId
+    console.log(userId)
     CalendarEvents.create({
         eventName,
         eventDetails,
-        eventDate
+        eventDate,
+        createdBy: userId
     })
     .then(res => response.json(res).status(200))
     .catch(err => response.json(err).status(400))
 }
 
 module.exports.getAllEvents = (request,response) => {
-    CalendarEvents.find()
+    const decodedJwt = jwt.decode(request.cookies.RANDOM_TOKEN, {complete: true})
+    const userId = decodedJwt.payload.userId
+    CalendarEvents.find({createdBy: userId})
     .then(res => response.json(res).status(200))
     .catch(err => response.json(err).status(400))
 }

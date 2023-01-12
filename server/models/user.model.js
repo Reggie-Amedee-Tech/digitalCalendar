@@ -13,12 +13,12 @@ const userModelSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    userId: {
+        type: mongoose.Types.ObjectId
+    },
     password: {
         type: String,
         required: true
-    },
-    userId: {
-        type: mongoose.Types.ObjectId
     }
 }, {timestamps: true})
 
