@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from '../assets/Homepage.module.css';
 import Calendar from '../components/Calendar';
-import CalendarEvents from '../components/CalendarEvents';
+import CalendarEvents from '../components/CurrentProjects';
 
 const Homepage = () => {
     return (
