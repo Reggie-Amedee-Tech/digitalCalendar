@@ -1,14 +1,14 @@
 import React from 'react';
 import classes from '../assets/Homepage.module.css';
 import Calendar from '../components/Calendar';
-import CalendarEvents from '../components/CurrentProjects';
+import CurrentProjects from '../components/CurrentProjects';
 
 const Homepage = () => {
     return (
         <div className={classes.Div}>
             <div className={classes.Container}>
                 <Calendar/>
-                <CalendarEvents/>
+                <CurrentProjects/>
             </div>
         </div>
     )

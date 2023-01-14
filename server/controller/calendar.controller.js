@@ -17,9 +17,9 @@ module.exports.createEvent = (request, response) => {
 }
 
 module.exports.getAllEvents = (request,response) => {
-    const decodedJwt = jwt.decode(request.cookies.RANDOM_TOKEN, {complete: true})
-    const userId = decodedJwt.payload.userId
-    CalendarEvents.find({createdBy: userId})
+    // const decodedJwt = jwt.decode(request.cookies.RANDOM_TOKEN, {complete: true})
+    // const userId = decodedJwt.payload.userId
+    CalendarEvents.find()
     .then(res => response.json(res).status(200))
     .catch(err => response.json(err).status(400))
 }

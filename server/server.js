@@ -11,7 +11,7 @@ const connectDB = require('./config/db.config');
 connectDB();
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true, origin: "http://localhost:3000/"}));
 app.use(cookieParser())
 app.use(cors({credentials: true}));
 

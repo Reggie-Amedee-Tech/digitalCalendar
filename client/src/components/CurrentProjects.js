@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import classes from '../assets/CalendarEvents.module.css'
 
 
-const CalendarEvents = () => {
+const CurrentProjects = () => {
 
   const loading = useSelector(state => state.getAllEvents.loading)
   const actualCalendarEvents = useSelector(state => state.getAllEvents.calendarEvents)
@@ -43,4 +43,4 @@ const CalendarEvents = () => {
   )
 }
 
-export default CalendarEvents
+export default CurrentProjects
