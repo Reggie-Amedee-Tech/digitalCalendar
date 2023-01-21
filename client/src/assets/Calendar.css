@@ -1,20 +1,17 @@
-
-
-
-.react-datepicker__navigation{
+.react-datepicker__navigation {
   height: 60px;
   width: 60px;
 }
 
-.react-datepicker__month-container{
+.react-datepicker__month-container {
   border: 5px solid black;
 }
 
-.react-datepicker__current-month{
+.react-datepicker__current-month {
   font-size: 3rem;
 }
 
-.react-datepicker__day-names{
+.react-datepicker__day-names {
   width: 25vw;
   display: flex;
   flex-direction: row;
@@ -31,7 +28,7 @@
   height: 7vh;
 }
 
-.react-datepicker__day{
+.react-datepicker__day {
   font-size: 1.5rem;
   text-align: center;
 }

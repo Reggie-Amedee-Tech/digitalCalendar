@@ -1,5 +1,6 @@
 import styles from "./styles.module.css"
 import Calendar from "../Calendar"
+import CurrentProjects from "../CurrentProjects"
 
 const Main = () => {
   const handleLogout = () => {
@@ -16,6 +17,7 @@ const Main = () => {
         </button>
       </nav>
       <Calendar />
+      <CurrentProjects />
     </div>
   )
 }
